@@ -116,6 +116,38 @@ function getCurrentContext() {
 }
 
 // ─────────────────────────────────────────────
+// Tool: Fetch X Algorithm latest updates
+// ─────────────────────────────────────────────
+async function fetchXAlgorithmRepo() {
+  try {
+    // Fetch latest commits from the open-source X algorithm repository
+    const res = await fetch('https://api.github.com/repos/xai-org/x-algorithm/commits?per_page=5', {
+      headers: { 'User-Agent': 'ContentEngine/1.0' }
+    });
+    
+    if (!res.ok) {
+      throw new Error(`GitHub API error: ${res.statusText}`);
+    }
+
+    const commits = await res.json();
+    const latestUpdates = commits.map(c => ({
+      message: c.commit.message,
+      date: c.commit.author.date,
+      author: c.commit.author.name
+    }));
+
+    return {
+      success: true,
+      source: 'GitHub (xai-org/x-algorithm)',
+      updates: latestUpdates,
+      strategy_note: 'Remember to apply X algorithm rules: 1) No external links in main tweet (put in replies), 2) End with questions to drive reply multipliers, 3) Use line breaks to increase read dwell time.'
+    };
+  } catch (error) {
+    return { success: false, error: error.message };
+  }
+}
+
+// ─────────────────────────────────────────────
 // Tool Registry — the agent sees this list
 // ─────────────────────────────────────────────
 export const TOOLS = {
@@ -130,6 +162,10 @@ export const TOOLS = {
   fetchRedditMulti: {
     fn: fetchRedditMulti,
     description: 'Fetch hot posts from multiple AI subreddits at once. Args: { subreddits: string[] (default ["artificial","MachineLearning","LocalLLaMA"]), count: number (default 5) }',
+  },
+  fetchXAlgorithmRepo: {
+    fn: fetchXAlgorithmRepo,
+    description: 'Fetch the latest code commits and updates from the open-source X algorithm repository (xai-org/x-algorithm). Useful for learning how the timeline ranking works.',
   },
   getCurrentContext: {
     fn: getCurrentContext,

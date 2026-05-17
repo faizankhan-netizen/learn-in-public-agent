@@ -38,16 +38,61 @@ function loadEnv() {
 const ENV = loadEnv();
 
 // ─────────────────────────────────────────────
-// Gemini Flash provider
+// Gemini API Key Pool — automatic rotation
 // ─────────────────────────────────────────────
-async function callGemini(messages, options = {}) {
-  const apiKey = ENV.GEMINI_API_KEY || process.env.GEMINI_API_KEY;
-  if (!apiKey) {
+function loadGeminiKeys() {
+  const keys = [];
+
+  // Collect all GEMINI_API_KEY* entries from .env
+  for (const [envKey, value] of Object.entries(ENV)) {
+    if (envKey.startsWith('GEMINI_API_KEY') && value) {
+      keys.push(value);
+    }
+  }
+
+  // Also check process.env as fallback
+  if (keys.length === 0 && process.env.GEMINI_API_KEY) {
+    keys.push(process.env.GEMINI_API_KEY);
+  }
+
+  return keys;
+}
+
+const GEMINI_KEYS = loadGeminiKeys();
+let currentKeyIndex = 0;
+
+function getNextKey() {
+  if (GEMINI_KEYS.length === 0) {
     throw new Error(
-      'GEMINI_API_KEY not found. Create a .env file with:\nGEMINI_API_KEY=your_key_here\n\nGet a free key at: https://aistudio.google.com/apikey'
+      'No GEMINI_API_KEY found. Create a .env file with:\nGEMINI_API_KEY=your_key_here\n\nGet a free key at: https://aistudio.google.com/apikey'
     );
   }
 
+  const key = GEMINI_KEYS[currentKeyIndex];
+  return key;
+}
+
+function rotateKey() {
+  const oldIndex = currentKeyIndex;
+  currentKeyIndex = (currentKeyIndex + 1) % GEMINI_KEYS.length;
+
+  // If we've cycled back to the first key, all keys are exhausted
+  if (currentKeyIndex === 0 && oldIndex !== 0) {
+    console.log('⚠️  All API keys exhausted. Waiting 30s before retrying...');
+    return { exhausted: true };
+  }
+
+  console.log(`🔄 Rotating to API key ${currentKeyIndex + 1}/${GEMINI_KEYS.length}`);
+  return { exhausted: false };
+}
+
+console.log(`🔑 Loaded ${GEMINI_KEYS.length} Gemini API key(s)`);
+
+// ─────────────────────────────────────────────
+// Gemini Flash provider (with auto-failover)
+// ─────────────────────────────────────────────
+async function callGemini(messages, options = {}, retryCount = 0) {
+  const apiKey = getNextKey();
   const model = options.model || 'gemini-2.5-flash';
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
@@ -80,6 +125,31 @@ async function callGemini(messages, options = {}) {
     body: JSON.stringify(body),
   });
 
+  // Auto-rotate on rate limit (429) or quota exceeded (403), or retry on server error (500+)
+  if (res.status === 429 || res.status === 403 || res.status >= 500) {
+    const maxRetries = GEMINI_KEYS.length * 2 + 3; // Allow extra retries for server errors
+    if (retryCount >= maxRetries) {
+      throw new Error(`Gemini API error (${res.status}). Max retries reached. Try again later.`);
+    }
+
+    // If it's a server error (like 503 High Demand), wait and retry without burning a key rotation
+    if (res.status >= 500) {
+      console.log(`\n⚠️ Gemini API high demand (${res.status}). Waiting 5 seconds before retrying...`);
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+      return callGemini(messages, options, retryCount + 1);
+    }
+
+    const { exhausted } = rotateKey();
+
+    if (exhausted) {
+      // All keys tried — wait 30s then try from the start again
+      console.log(`\n⚠️ All keys exhausted. Waiting 30s before retrying...`);
+      await new Promise((resolve) => setTimeout(resolve, 30000));
+    }
+
+    return callGemini(messages, options, retryCount + 1);
+  }
+
   if (!res.ok) {
     const errorText = await res.text();
     throw new Error(`Gemini API error (${res.status}): ${errorText}`);
@@ -93,6 +163,7 @@ async function callGemini(messages, options = {}) {
 
   return data.candidates[0].content.parts[0].text;
 }
+
 
 // ─────────────────────────────────────────────
 // Ollama provider (for when MacBook arrives)

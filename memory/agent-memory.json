@@ -1,0 +1,85 @@
+{
+  "createdAt": "2026-05-17T06:10:32.086Z",
+  "lastRunAt": "2026-05-17T07:17:09.797Z",
+  "totalRuns": 4,
+  "coveredTopics": [
+    {
+      "topic": "MTP Support Merged into llama.cpp:",
+      "date": "2026-05-16T00:00:00Z"
+    },
+    {
+      "topic": "SANA-WM: Open-Source World Model for Video:",
+      "date": "2026-05-16T00:00:00Z"
+    },
+    {
+      "topic": "Δ-Mem: Efficient Online Memory for LLMs:",
+      "date": "2026-05-16T00:00:00Z"
+    },
+    {
+      "topic": "arXiv's 1-Year Ban for LLM-Generated Errors:",
+      "date": "2026-05-16T00:00:00Z"
+    },
+    {
+      "topic": "Qwen3.6-35B-A3B on Terminal-Bench 2.0 Leaderboard:",
+      "date": "2026-05-16T00:00:00Z"
+    },
+    {
+      "topic": "Date:",
+      "date": "2026-05-17T06:11:17.227Z"
+    },
+    {
+      "topic": "Zerostack – A Unix-inspired coding agent written in pure Rust (Hacker News):",
+      "date": "2026-05-17T06:11:17.227Z"
+    },
+    {
+      "topic": "OpenAI and Government of Malta partner to roll out ChatGPT Plus to all citizens (Hacker News):",
+      "date": "2026-05-17T06:11:17.227Z"
+    },
+    {
+      "topic": "New Gemma 4 Finetunes (G4-Meromero, Ortenzya) for Creative Tasks (Reddit /r/LocalLLaMA):",
+      "date": "2026-05-17T06:11:17.227Z"
+    },
+    {
+      "topic": "Discussions and Benchmarks for Local LLM Hardware (Reddit /r/LocalLLaMA):",
+      "date": "2026-05-17T06:11:17.227Z"
+    },
+    {
+      "topic": "Topic:",
+      "date": "2026-05-17T06:17:54.644Z"
+    },
+    {
+      "topic": "Topic:",
+      "date": "2026-05-17T06:52:43.462Z"
+    },
+    {
+      "topic": "Topic:",
+      "date": "2026-05-17T07:17:09.797Z"
+    },
+    {
+      "topic": "Topic:",
+      "date": "2026-05-17T07:17:09.797Z"
+    },
+    {
+      "topic": "Thoughtful Reply:",
+      "date": "2026-05-17T07:17:09.797Z"
+    },
+    {
+      "topic": "Topic:",
+      "date": "2026-05-17T07:17:09.797Z"
+    },
+    {
+      "topic": "Thoughtful Reply:",
+      "date": "2026-05-17T07:17:09.797Z"
+    }
+  ],
+  "postedTweets": [],
+  "blockedTopics": [],
+  "voiceNotes": [
+    "Curious learner, not expert",
+    "Uses lowercase hooks",
+    "Asks genuine questions",
+    "References personal experience"
+  ],
+  "accountStage": "ramping",
+  "accountCreatedAt": null
+}

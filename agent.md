@@ -33,13 +33,18 @@
 - [memory.js](file:///d:/Agentic%20Workflow/src/memory.js) — JSON persistent brain
 - [DESIGN.md](file:///d:/Agentic%20Workflow/DESIGN.md) — Architectural decisions
 - [LAUNCH_PLAYBOOK.md](file:///d:/Agentic%20Workflow/LAUNCH_PLAYBOOK.md) — Social launch roadmap
+- [QUEUE.md](file:///d:/Agentic%20Workflow/QUEUE.md) — Staging area for approved upcoming posts
+- [ARCHIVE.md](file:///d:/Agentic%20Workflow/ARCHIVE.md) — Historical record of published posts
+- [X_ALGORITHM_CHEAT_SHEET.md](file:///d:/Agentic%20Workflow/X_ALGORITHM_CHEAT_SHEET.md) — Strategic rules for algorithmic growth
 - [README.md](file:///d:/Agentic%20Workflow/README.md) — Public-facing GitHub introduction
+- [JOURNEY.md](file:///d:/Agentic%20Workflow/JOURNEY.md) — Living decision log (debates, pivots, conclusions)
 ### Enforcement Rules
 
-1. **Every feature** follows the sprint pipeline: Think → Plan → Build → Review → Test → Ship → Reflect
-2. **Every code change** is reviewed against `REVIEW_CHECKLIST.md` before ship
-3. **Every new UI element** must conform to `DESIGN_SYSTEM.md` tokens (once populated)
-4. **Security audit** runs before any deployment or public exposure
+1. **The Journey Mandate**: Whenever you and Faizan debate a topic, pivot from an original plan, or make a strategic decision, you MUST immediately document it in `JOURNEY.md` from a first-person perspective. Do not wait for permission to log a decision.
+2. **Every feature** follows the sprint pipeline: Think → Plan → Build → Review → Test → Ship → Reflect
+3. **Every code change** is reviewed against `REVIEW_CHECKLIST.md` before ship
+4. **Every new UI element** must conform to `DESIGN_SYSTEM.md` tokens (once populated)
+5. **Security audit** runs before any deployment or public exposure
 5. **Search Before Building** — always check for built-ins, best practices, and official docs first
 6. **Boil the Lake** — complete implementation, no 90% shortcuts
 7. **User Sovereignty** — present options, never act on architectural decisions unilaterally
@@ -212,7 +217,21 @@ Launch playbook: [LAUNCH_PLAYBOOK.md](file:///d:/Agentic%20Workflow/LAUNCH_PLAYB
 | 2026-05-17 00:55 | **PHASE 1 DEEP** | Built memory system with topic tracking, account stage progression (launch→ramping→active), launch mode generates origin posts |
 | 2026-05-17 00:59 | **LAUNCH PLAYBOOK** | Created LAUNCH_PLAYBOOK.md — complete step-by-step guide for account launch |
 | 2026-05-17 01:28 | **HANDLE SECURED** | @BuildWithFaizan reserved on X. Email: buildwithfaizan1@gmail.com |
-| 2026-05-17 11:13 | **REPO CREATED** | Created learn-in-public-agent on GitHub. Generated a premium README.md with architecture Mermaid diagram, quick start guide, and MIT License info. Ready to push to GitHub |
+| 2026-05-17 11:13 | **REPO CREATED** | Created learn-in-public-agent on GitHub. Premium README.md generated |
+| 2026-05-17 11:34 | **FIRST TWEET** | Pinned manifesto posted on @BuildWithFaizan with VS Code screenshot |
+| 2026-05-17 11:45 | **RUN 4** | Launch mode worked. Tweets present but generic launch posts + hashtags. Fixed: tweets-first output format, banned hashtags, project-specific launch prompts |
+| 2026-05-17 11:52 | **MULTI-KEY** | Added API key rotation with auto-failover in llm.js. Supports unlimited GEMINI_API_KEY* entries |
+| 2026-05-17 11:58 | **VOICE PIVOT** | Switched from lowercase indie-hacker style to Naval Ravikant style: proper capitalization, plain English, jargon translation table. System prompt updated with simple-word mandates |
+| 2026-05-17 12:02 | **JOURNEY FILE** | Created JOURNEY.md — living decision log capturing every debate, pivot, pushback, and conclusion. Rewrote to 1st-person perspective |
+| 2026-05-17 12:12 | **X ALGORITHM** | Added fetchXAlgorithmRepo tool to pull updates from open-source X algorithm. Updated system prompt to enforce rules: line breaks for dwell time, questions for reply multiplier, NO external links in main tweet |
+| 2026-05-17 12:41 | **REPLY AMMO** | Upgraded system prompt to generate "Reply Ammunition." Agent now generates 3 Naval-style insightful takes on daily trending news so Faizan has ready-made replies for big X accounts |
+| 2026-05-17 12:45 | **503 FIX** | Updated llm.js to automatically catch Gemini 503 (High Demand) and 500+ server errors. Agent now applies a 5-second exponential backoff and retries instead of crashing |
+| 2026-05-17 12:53 | **PHASE SHIFT** | Updated `agent-memory.json` accountStage to `ramping`. Officially pausing daily agent runs to stop burning API tokens and focus 100% on manual social execution (LAUNCH_PLAYBOOK Phase 1) |
+| 2026-05-17 13:45 | **BRAND DECOUPLING** | Created `BRAND_GUIDELINES.md` as the single source of truth for the agent's voice, tone, and native reply strategy. Updated `src/agent.js` to dynamically load this file instead of hardcoding the personality |
+| 2026-05-17 14:01 | **HISTORICAL ANALOGIES** | Added a new guideline to `BRAND_GUIDELINES.md` prompting the agent to ground opinions in smart, real-world historical parallels (like Covid, dot-com, early mobile) to sound 100% human and authoritative |
+| 2026-05-17 15:38 | **SMART FARMING & ARCHIVE** | Created `ARCHIVE.md` to store successfully published posts. Established the "Smart Farming" protocol to survive the X Premium sandbox by leveraging micro-influencers and external velocity |
+| 2026-05-17 18:29 | **POST #3 PUBLISHED** | Faizan successfully published Post #3 ("Writing code is only 10%...") and cleanly quote-chained it as Day 1 (PM) under his Pinned Manifesto |
+| 2026-05-17 18:31 | **PREMIUM LIMITS UPGRADE** | Following X Premium verification, updated `src/agent.js` system prompt to transition from a hard 260-character limit to a soft 350-character limit, removing the tedious programmatic `(187 chars)` print rule |
 
 ---
 

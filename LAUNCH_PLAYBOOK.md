@@ -155,6 +155,13 @@ Search for and follow accounts in these categories:
 
 Tweet 1 (Pinned — already written above)
 
+> **CRITICAL POSTING STRATEGY: THE REPLY-CHAIN METHOD**
+> For your first ~10 posts (your "Origin Arc"), you need to build context so strangers know *why* you're tweeting about AI agents. 
+> 1. Post your daily tweet as a standalone, normal post (for algorithmic reach).
+> 2. Immediately copy the URL of that new tweet.
+> 3. Go to your Pinned Manifesto, and reply to it with: "Update: [Paste URL]".
+> *Note: Stop doing this once you cross ~500 followers, otherwise your pinned thread will look like spam. It's a temporary tool to establish your story.*
+
 Tweet 2 — Behind the scenes:
 ```
 day 1 of learning AI in public.
@@ -302,6 +309,18 @@ Evening (5 min):
 
 ## Engagement Playbook
 
+### 🗣️ Your Voice & Tone (The "Opinionated Builder")
+If you sound like everyone else, you will be ignored. Stick to these 4 pillars:
+1. **Opinionated (Spiky Point of View):** X rewards strong takes. Don't sit on the fence. (e.g., "Fancy AI frameworks are bloated. A simple while loop is all you need.")
+2. **Relatable & Grounded:** Anchor your insights in physical reality. Use the **"8GB laptop with no GPU"** reference to contrast against people building with massive resources. *Warning: Use this sparingly so it doesn't become a gimmick.*
+3. **Dry Builder Humor:** Use self-deprecating humor about coding struggles (e.g., "my laptop sounds like a jet engine").
+4. **NO PUNS:** Never use wordplay or "dad jokes." It destroys your authenticity and makes you sound like a corporate AI bot.
+
+### 🎯 The "Native Reply" Strategy (Matching Room Temperature)
+When replying to big accounts (like Sam Altman or Logan Kilpatrick), you must match the vibe of the original post. 
+* **If they post a deep, structured thread:** Reply with a structured, grammatically correct insight.
+* **If they post a short, casual, hype tweet:** Reply natively. Use all lowercase, break grammar rules, drop the heavy context, and keep it extremely short. Leave just a single "breadcrumb" that makes them want to click your profile.
+
 ### How to Reply (Do's and Don'ts)
 
 | ✅ Do | ❌ Don't |
@@ -374,6 +393,18 @@ Best posting times for tech/AI audience:
 5. **Don't go from 0 to 10 posts/day.** Ramp up gradually.
 6. **Don't argue in comments.** Walk away from negativity. You're too new.
 7. **Don't delete posts that underperform.** Not everything will hit. That's normal.
+
+---
+
+## Phase 3: The "Return to Builder Mode" (When to code again)
+
+Do not touch the `src/` folder until one of these two triggers occurs:
+
+**Trigger A: New Hardware Arrival (The Local Pivot)**
+When your MacBook Air arrives, the first "season" of the account ends. You will announce the pivot, rip out the Gemini API, install Ollama, and rebuild the agent to run 100% locally. This is also when we will begin experimenting with LangGraph.
+
+**Trigger B: 500 Followers (The Features Upgrade)**
+When you hit a critical mass of followers, the demand will shift from "origin story" to "deep technical tutorials." At this point, you will return to `src/tools.js` to build complex new capabilities for the agent (reading GitHub repos, parsing PDF papers, analyzing competitor newsletters).
 
 ---
 

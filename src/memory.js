@@ -135,16 +135,25 @@ export function getMemoryContext(memory) {
 
   if (stage === 'launch') {
     context += `\n### LAUNCH MODE ACTIVE
-The X account is BRAND NEW. Content should:
-- Focus on introduction and context-setting
-- Tell the origin story: who you are, what you're building, why
-- Be more personal and less "content-y"
-- Show behind-the-scenes of your setup and learning process
-- Include a "what's coming" element to build anticipation
-- DON'T jump straight into advanced AI commentary — earn that trust first
+The X account (@BuildWithFaizan) is BRAND NEW. Faizan just posted his pinned manifesto.
 
-Generate an additional "Launch Posts" section with 3 introductory/context-setting tweets 
-that a brand new account should post BEFORE the regular content tweets.`;
+IMPORTANT CONTEXT about Faizan (use this in launch posts):
+- He built an AI agent from scratch in ~150 lines of JavaScript
+- Zero frameworks, zero dependencies — just a while loop
+- Runs on an 8GB RAM laptop with NO GPU
+- The agent researches HN/Reddit and writes tweet drafts
+- He's genuinely learning — not pretending to be an expert
+- His GitHub repo is called "learn-in-public-agent"
+
+Generate an additional "Launch Posts" section with 3 tweets that:
+- Reference his ACTUAL project and setup (not generic "hey everyone" intros)
+- Each one reveals a specific, interesting detail about what he built
+- Feel like natural follow-ups to his pinned manifesto
+- NO hashtags, NO "hey everyone", NO "excited to be here"
+- Include character counts
+
+Example launch post style:
+"day 1 update: i built my content engine in 150 lines of JS. no LangChain, no CrewAI. just a while loop that thinks, acts, and observes. that's literally how all AI agents work under the hood."`;
   }
 
   if (stage === 'ramping') {
