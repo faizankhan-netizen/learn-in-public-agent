@@ -1,0 +1,14 @@
+{
+  "name": "agentic-workflow",
+  "version": "1.0.0",
+  "description": "Content Engine — AI agent for Learn in Public content creation",
+  "type": "module",
+  "scripts": {
+    "agent": "node src/agent.js",
+    "briefing": "node src/agent.js --task briefing",
+    "tweets": "node src/agent.js --task tweets"
+  },
+  "keywords": ["ai-agent", "content-engine", "learn-in-public"],
+  "author": "",
+  "license": "MIT"
+}
