@@ -228,6 +228,7 @@
 | 7 | 2026-05-17 | Brand Decoupling | Hardcoded tone was removed from code and moved to `BRAND_GUIDELINES.md` |
 | 8 | 2026-05-17 | X Premium & Smart Farming | Secured verification and established sandbox growth protocol |
 | 9 | 2026-05-17 | Premium Soft Limits | Upgraded system constraints from hard 280-char limits to soft 350-char limits |
+| 10 | 2026-05-17 | Acronym Capitalization | Ensured acronyms (AI, SaaS, LLM) remain capitalized in all lowercase drafts |
 
 ---
 
@@ -239,6 +240,17 @@
 
 **Decision:** We updated `src/agent.js` to change the hard 260-character limit to a soft **350-character limit**. We also removed the requirement to print character counts `(187 chars)` at the end of each draft. This gives the agent and the human more creative freedom while keeping the drafts perfectly copy-paste ready.
 **Status:** ✅ Programmatic constraints updated in `src/agent.js`.
+
+---
+
+### Decision #19: Acronym Capitalization in Casual Writing
+**Date:** 2026-05-17  
+**Context:** During our manual engagement, we debated how to write acronyms (like "AI", "SaaS", "LLM") when utilizing the casual, native lowercase strategy.
+
+**Debate:** While writing in casual lowercase (e.g., "i build agents...") is highly native, writing acronyms in lowercase (e.g., "ai" or "llm") looks visually weak, amateurish, and can easily be misread as words like "aim" or "ailment". In developer culture, even when texting or writing casually, standard technical acronyms must remain capitalized.
+
+**Decision:** We codified a strict rule in `BRAND_GUIDELINES.md` stating that technical acronyms (AI, SaaS, LLM, GPU, RAM, API) must **always** remain fully capitalized. This preserves professional developer authority while keeping the surrounding narrative casual and human.
+**Status:** ✅ Codified in `BRAND_GUIDELINES.md` (Section 3).
 
 ---
 

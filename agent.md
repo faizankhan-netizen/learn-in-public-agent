@@ -232,6 +232,7 @@ Launch playbook: [LAUNCH_PLAYBOOK.md](file:///d:/Agentic%20Workflow/LAUNCH_PLAYB
 | 2026-05-17 15:38 | **SMART FARMING & ARCHIVE** | Created `ARCHIVE.md` to store successfully published posts. Established the "Smart Farming" protocol to survive the X Premium sandbox by leveraging micro-influencers and external velocity |
 | 2026-05-17 18:29 | **POST #3 PUBLISHED** | Faizan successfully published Post #3 ("Writing code is only 10%...") and cleanly quote-chained it as Day 1 (PM) under his Pinned Manifesto |
 | 2026-05-17 18:31 | **PREMIUM LIMITS UPGRADE** | Following X Premium verification, updated `src/agent.js` system prompt to transition from a hard 260-character limit to a soft 350-character limit, removing the tedious programmatic `(187 chars)` print rule |
+| 2026-05-17 19:36 | **ACRONYM RULES** | Added technical acronym capitalization guidelines (AI, SaaS, LLM) to `BRAND_GUIDELINES.md` and `JOURNEY.md` (Decision #19) to preserve professional authority in casual writing |
 
 ---
 
