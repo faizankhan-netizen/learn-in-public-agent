@@ -326,6 +326,17 @@
 
 ---
 
+### Decision #26: The Anti-Sycophancy Mandate & Supervised Learning
+**Date:** 2026-05-18  
+**Context:** To scale our "Room-Reading" intelligence, we needed a way for the AI to learn how to behave dynamically without hallucinating or giving generic advice. Also, the user recognized the danger of a "yes-man" AI agreeing with sub-optimal strategies.
+
+**Debate:** Should the AI just execute whatever the user says, or should it act as a sparring partner that enforces the rules of the platform?
+
+**Decision:** We established a "Supervised Learning Phase" where the user will feed full Markdown threads to the AI to train its pattern-reading instincts. More importantly, we instituted the **Anti-Sycophancy Mandate**: the AI is explicitly required to have non-negotiable opinions and push back against the user if a drafted post breaks the X Algorithm laws or strays from the optimal growth path.
+**Status:** ✅ Core operating principle established.
+
+---
+
 ## Lessons Learned
 
 1. **My agent is only as good as its system prompt.** The loop code barely changed. I've had to rewrite the prompt 4 times.
