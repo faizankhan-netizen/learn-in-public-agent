@@ -349,6 +349,18 @@
 
 ---
 
+### Decision #28: The Headless Autonomy & Feedback Loop
+**Date:** 2026-05-18  
+**Context:** The agent was still dependent on a chat interface, creating high friction for the user. Additionally, we lacked mathematical tracking for post performance and were vulnerable to vocabulary shadow-bans.
+
+**Decision:** We transitioned to full headless autonomy.
+1. **The Analytics Ledger:** Created `ANALYTICS_LEDGER.md` to mathematically grade the AI's strategies and deprecate weak ones based on real X metrics.
+2. **Vocabulary Entropy:** Added the "Burned Words" protocol to prevent robotic repetition shadow-bans.
+3. **Headless Watcher:** Built `src/headless_watcher.js` to autonomously monitor the `data_drop/` folder, run the AI loop, and append drafts to `QUEUE.md` without any UI interaction.
+**Status:** ✅ Fully autonomous invisible factory deployed.
+
+---
+
 ## Lessons Learned
 
 1. **My agent is only as good as its system prompt.** The loop code barely changed. I've had to rewrite the prompt 4 times.

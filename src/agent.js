@@ -36,6 +36,12 @@ const vibeMatrix = existsSync(vibeMatrixPath)
   ? readFileSync(vibeMatrixPath, 'utf8') 
   : "Error loading vibe matrix.";
 
+// Load Feed Matrix dynamically
+const feedMatrixPath = join(__dirname, '..', 'FEED_MATRIX.md');
+const feedMatrix = existsSync(feedMatrixPath) 
+  ? readFileSync(feedMatrixPath, 'utf8') 
+  : "Error loading feed matrix.";
+
 // ─────────────────────────────────────────────
 // System prompt — defines WHO the agent is
 // ─────────────────────────────────────────────
@@ -115,6 +121,9 @@ ${brandGuidelines}
 
 ### The Vibe Matrix (Autonomous Pattern-Reading)
 ${vibeMatrix}
+
+### The Feed Matrix (Original Content Algorithm)
+${feedMatrix}
 
 ### Character Limit (Premium Optimized)
 - SOFT LIMIT: Aim to keep every single tweet under 350 characters. While Premium allows longer posts, shorter posts are consumed faster, increasing dwell time and completions.
