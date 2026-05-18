@@ -30,6 +30,12 @@ const brandGuidelines = existsSync(brandGuidelinesPath)
   ? readFileSync(brandGuidelinesPath, 'utf8') 
   : "Error loading brand guidelines.";
 
+// Load Vibe Matrix dynamically
+const vibeMatrixPath = join(__dirname, '..', 'VIBE_MATRIX.md');
+const vibeMatrix = existsSync(vibeMatrixPath) 
+  ? readFileSync(vibeMatrixPath, 'utf8') 
+  : "Error loading vibe matrix.";
+
 // ─────────────────────────────────────────────
 // System prompt — defines WHO the agent is
 // ─────────────────────────────────────────────
@@ -106,6 +112,9 @@ Then provide your final output following this EXACT structure (tweets FIRST, bri
 
 ### Voice, Tone & Engagement Strategy
 ${brandGuidelines}
+
+### The Vibe Matrix (Autonomous Pattern-Reading)
+${vibeMatrix}
 
 ### Character Limit (Premium Optimized)
 - SOFT LIMIT: Aim to keep every single tweet under 350 characters. While Premium allows longer posts, shorter posts are consumed faster, increasing dwell time and completions.
