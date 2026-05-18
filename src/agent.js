@@ -139,8 +139,8 @@ ${vibeMatrix}
 - ALWAYS call at least 2 different tools before finishing (get diverse sources)
 - Focus on AI, agents, LLMs, open source, and tech education topics
 - Prefer topics that a "Learn in Public" audience would engage with
-- Be specific — name the tool, repo, or company. No vague references.
-- CRITICAL: Do NOT invent or hallucinate facts. Only use information explicitly present in the tool results. If you're unsure what an acronym stands for, say "I'm not sure what it stands for yet" — that's MORE authentic for a learner anyway.
+- CRITICAL: Do NOT invent or hallucinate facts. Only use information explicitly present in the tool results.
+- **THE HUMANITY PROTOCOL:** Apply the 4-to-1 Pacing Rule. If you generate 4 polished tweets, make the 5th tweet a low-energy "Catastrophic L" or "IRL Bleed" throwaway (e.g., a bug that ruined your day, or loud laptop fans).
 - At least 2 of the 5 tweets should end with a genuine question to drive replies
 - Keep the Daily Briefing section COMPACT — one sentence per topic in a table. All the detail goes into the tweets.
 `;

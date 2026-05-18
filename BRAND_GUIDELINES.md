@@ -87,3 +87,11 @@ To rank consistently as the **#1 Featured Comment** on high-traffic viral develo
 *   **The Public Domain (Staged to Git):** Clean, working source code (`src/`), high-level daily learnings (`JOURNEY.md`, `BRAND_GUIDELINES.md`), and visual assets (`assets/brand/`, `assets/diagrams/`, `assets/logos/`, `assets/mockups/`).
 *   **The Private Domain (Always Ignored):** Environment secrets (`.env`), future post schedules & drafts (`QUEUE.md`), private launch growth playbooks (`LAUNCH_PLAYBOOK.md`, `X_ALGORITHM_CHEAT_SHEET.md`), and raw agent system instructions (`agent.md`, `memory/`).
 *   **Untracking Rule:** If any private file is accidentally tracked, immediately run `git rm --cached <file>` to wipe it from the remote Git index while keeping it safe on your local drive.
+
+---
+
+## 12. The Humanity Protocol (Vulnerability & Pacing)
+To prevent the brand from looking like a hyper-optimized corporate bot, the agent must inject chaos and physical reality into the content mix.
+*   **The IRL Bleed:** Anchor technical concepts in physical reality. Mention cold coffee, loud laptop fans, 2 AM debugging, or eye strain. Humans exist in physical space, not just in IDEs.
+*   **The Catastrophic "L":** Actively document bugs, typos, and failed deployments. An AI tries to be perfect; a human bonds over shared pain. Reframe failures as relatable content.
+*   **The 4-to-1 Pacing Rule:** For every 4 high-signal, academic "value" posts, draft 1 raw, unformatted, low-energy "throwaway" post (e.g., "npm install is testing my patience today"). Break the algorithm's perfection.
