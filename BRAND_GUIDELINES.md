@@ -62,3 +62,28 @@ Every major technical update should be accompanied by a clean, high-contrast dar
 - "This highlights AI's growing role as a powerful assistant for developers"
 - "hey everyone! 👋 starting a new journey here" (too generic, no substance)
 - "just built my content agent in 150 lines of JS. no LangChain, no CrewAI" (too much jargon)
+
+---
+
+## 9. The "Discord Call Test" (Authenticity Check)
+To build a respected developer brand, you must never pose as an expert on things you don't actually understand. 
+*   **The Rule:** If I draft a reply using advanced computer science terms (e.g., *quantization, attention heads, memory leaks, RAG*), you must pass the **Discord Call Test**: *"If someone hopped on a voice call with me right now, could I explain what this means in simple terms?"*
+*   **If Yes:** Post it.
+*   **If No:** The copilot must first break down the concept in a simple "learning loop", and the tweet must be simplified into your own voice. You are the editor-in-chief, not a copy-paste bot.
+
+---
+
+## 10. The X Reply Ranking Blueprint
+To rank consistently as the **#1 Featured Comment** on high-traffic viral developer threads, drafts must adhere to the algorithmic and psychological "ranking pattern":
+*   **The Hook:** Start with a strong, slightly provocative, or highly resonant framing (e.g., *"when code is commoditized, the moats shift..."*).
+*   **Structured Pacing:** Use a clean, numbered 2-part list (`1.` and `2.`) to grab attention immediately.
+*   **Cultural Technical Slang:** Inject highly contemporary developer terms (like *"vibe coding"*, *"ephemeral sandboxes"*, *"context poisoning"*) to signal authentic culture.
+*   **Zero Polished AI Grammar:** Keep it lowercase-first, conversational, unpolished, and fast, but always capitalize core acronyms (AI, SaaS, LLM, GPU, RAM, API).
+
+---
+
+## 11. Git Security & Privacy Protocol
+"Building in public" means transparency of code and daily learnings, NOT giving away your competitive edge or future content pipeline.
+*   **The Public Domain (Staged to Git):** Clean, working source code (`src/`), high-level daily learnings (`JOURNEY.md`, `BRAND_GUIDELINES.md`), and visual assets (`assets/brand/`, `assets/diagrams/`, `assets/logos/`, `assets/mockups/`).
+*   **The Private Domain (Always Ignored):** Environment secrets (`.env`), future post schedules & drafts (`QUEUE.md`), private launch growth playbooks (`LAUNCH_PLAYBOOK.md`, `X_ALGORITHM_CHEAT_SHEET.md`), and raw agent system instructions (`agent.md`, `memory/`).
+*   **Untracking Rule:** If any private file is accidentally tracked, immediately run `git rm --cached <file>` to wipe it from the remote Git index while keeping it safe on your local drive.

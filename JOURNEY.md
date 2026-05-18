@@ -232,6 +232,9 @@
 | 11 | 2026-05-18 | Narrative Threading Split | Decoupled broad standalone posts from our linear pinned documentary updates |
 | 12 | 2026-05-18 | Premium Long-Form Posts | Shifted split threads to single high-dwell-time premium long-form posts |
 | 13 | 2026-05-18 | People-Friendly Visuals | Replaced dry technical diagrams with accessible, jargon-free visual metaphors |
+| 14 | 2026-05-18 | Git Security boundary | Separated public code/assets from private playbooks, gitignored queues and prompts |
+| 15 | 2026-05-18 | Reply Ranking Blueprint | Shifted from long paragraphs to structured hooks, scannable lists, and trending slang |
+| 16 | 2026-05-18 | The Discord Call Test | Implemented strict authenticity checks and developer learning loops for technical terms |
 
 ---
 
@@ -290,6 +293,39 @@
 
 ---
 
+### Decision #23: Decoupling Public Code from Private Playbook (Git Security Protocol)
+**Date:** 2026-05-18  
+**Context:** We realized that pushing the entire repository publicly on GitHub would expose our private growth playbooks (`LAUNCH_PLAYBOOK.md`), upcoming post drafts (`QUEUE.md`), private algorithm cheatsheets (`X_ALGORITHM_CHEAT_SHEET.md`), and raw agent system instructions (`agent.md`).
+
+**Debate:** Pushing everything publicly compromises our private growth strategy and destroys the surprise/magic of upcoming posts, while exposing our raw agent prompt invites copycats. But "building in public" demands code transparency.
+
+**Decision:** We established a strict Git security boundary. Added all private files (`QUEUE.md`, `agent.md`, `LAUNCH_PLAYBOOK.md`, `memory/`) to `.gitignore` and ran `git rm --cached` to wipe them from Git tracking index (deleting them from public GitHub while preserving them locally), leaving only clean source scripts, public visual assets, and high-level learning documentations open-source.
+**Status:** ✅ Strict exclusions successfully executed and synced to GitHub.
+
+---
+
+### Decision #24: The X Reply Ranking Blueprint
+**Date:** 2026-05-18  
+**Context:** We analyzed why certain replies to high-traffic tech tweets consistently rank #1 while others get buried.
+
+**Debate:** AI-style paragraph replies stick out as robotic and spammy. To get featured at the top, a reply must fit a specific visual and psychological pattern.
+
+**Decision:** Codified "The Top-Reply Blueprint": Start with a highly resonant/contrarian hook, use clean scannable 2-part structured lists (1. and 2.), inject trending industry jargon/slang (like "vibe coding", "ephemeral sandboxes"), and end with a punchy reality check.
+**Status:** ✅ Blueprint integrated into `BRAND_GUIDELINES.md` (Section 10).
+
+---
+
+### Decision #25: The Discord Call Test for Learning Integrity
+**Date:** 2026-05-18  
+**Context:** We realized that writing overly polished, expert-level AI replies risks making me look like a fraud if someone challenges me in follow-up discussions.
+
+**Debate:** To build a genuine brand, I must actually understand everything I post.
+
+**Decision:** Implemented "The Discord Call Test": If I wouldn't feel comfortable explaining a technical term (like "attention heads" or "context poisoning") to someone in a Discord voice call, I must simplify the tweet. Every complex term I post must first be broken down by my AI copilot in a simple learning loop.
+**Status:** ✅ Authenticity framework locked in `BRAND_GUIDELINES.md` (Section 9).
+
+---
+
 ## Lessons Learned
 
 1. **My agent is only as good as its system prompt.** The loop code barely changed. I've had to rewrite the prompt 4 times.
@@ -300,6 +336,9 @@
 6. **A pinned thread is a documentary, not a bulletin board.** Keep the pinned chain tightly focused on progressive, step-by-step engineering wins. 
 7. **Premium features must dictate structure.** X Premium ranking boosts dwell time; long-form posts are structurally superior to high-friction threads.
 8. **Jargon ruins visuals.** Diagrams are meant to simplify, not complicate. Use real-world physical metaphors (like "a diary" or "rules") to make complex AI loops immediately intuitive.
+9. **Build in public is code transparency, not IP exposure.** Keep your strategy and queues hidden so your growth remains organic and your upcoming posts remain a surprise.
+10. **Reply ranking has a visual and cultural formula.** Structure, scannability, and trending developer slang (like "vibe coding") are the keys to hitting the #1 spot on high-traffic threads.
+11. **Never post beyond your current understanding.** Use the "Discord Call Test" to keep your learning authentic. You are an editor-in-chief, not a copy-paste bot.
 
 ---
 
