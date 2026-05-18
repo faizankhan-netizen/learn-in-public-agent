@@ -38,7 +38,19 @@ Always use the simple version of technical terms:
 - "token limit" → "the AI ran out of memory mid-sentence"
 - "fine-tune" → "customize" or "train for a specific job"
 
-## 5. Examples
+## 6. Formats (Premium Long-Form vs. Threads)
+Since the account is verified with **X Premium**, we leverage long-form posts over standard multi-tweet threads:
+* **Algorithmic Dwell Time:** Long-form posts are heavily boosted by the algorithm because they keep users reading on the screen.
+* **Mini-Newsletter Style:** Format long-form posts with clean line breaks, bold headers, and numbered lists. Keep the tone punchy and Naval-style. 
+* **Zero Friction:** Avoid splitting cohesive step-by-step tutorials into threads. Keep it in a single post to prevent "Show replies" friction.
+
+## 7. Visual Assets & Metaphors (CRITICAL)
+Every major technical update should be accompanied by a clean, high-contrast dark-mode diagram saved in the `assets/` directory:
+* **Zero Technical Jargon:** Never use developer terms like "JSON File", "System Prompt", or "Serialization" in visual diagrams.
+* **Universal Metaphors:** Translate code structures into visual real-world concepts (e.g., "The Diary" instead of "JSON", "Rules for Today" instead of "Prompt Instructions", "AI Writer" instead of "Agent Loop").
+* **Explicit Flow Labels:** Arrow lines showing data flow must have active, human-friendly labels explaining the action (e.g., "Read what we already wrote" instead of "Load topics", "Add: 'Do not repeat!'" instead of "Inject constraint").
+
+## 8. Examples
 
 **GOOD examples:**
 - "Wait, an AI just fixed 271 Firefox bugs? I need to understand how this works."

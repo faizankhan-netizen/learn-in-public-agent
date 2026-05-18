@@ -285,11 +285,18 @@ Focus on: AI agents, open source LLMs, developer tools, and tech education.`;
     const filepath = saveOutput(output);
 
     // ── Record what we covered (prevents repetition next run) ──
-    const topicMatches = output.match(/\*\*([^*]+)\*\*/g);
-    if (topicMatches) {
-      const topics = topicMatches.map((t) => t.replace(/\*/g, '')).slice(0, 5);
-      recordTopics(memory, topics);
-      console.log(`🧠 Remembered ${topics.length} topics for future runs.`);
+    const briefingLines = output.split('\n');
+    const topics = [];
+    for (const line of briefingLines) {
+      const match = line.match(/^\|\s*\d+\s*\|\s*([^|]+?)\s*\|/);
+      if (match) {
+        topics.push(match[1].trim());
+      }
+    }
+
+    if (topics.length > 0) {
+      recordTopics(memory, topics.slice(0, 5));
+      console.log(`🧠 Remembered ${Math.min(topics.length, 5)} topics for future runs.`);
     }
 
     console.log('\n🎉 Done! Review your briefing and pick the tweets to post.\n');

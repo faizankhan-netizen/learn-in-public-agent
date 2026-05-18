@@ -10,3 +10,18 @@ output/
 # OS files
 .DS_Store
 Thumbs.db
+
+# ========================================================
+# 🔒 PRIVATE BUILD IN PUBLIC PLAYBOOK (KEEP THESE HIDDEN!)
+# ========================================================
+
+# 1. Private Launch & Growth Strategies
+LAUNCH_PLAYBOOK.md
+X_ALGORITHM_CHEAT_SHEET.md
+
+# 2. Upcoming Scheduled Content (Keep the magic & surprise alive!)
+QUEUE.md
+
+# 3. Agent Core Brain & Memory (Your proprietary competitive IP)
+agent.md
+memory/

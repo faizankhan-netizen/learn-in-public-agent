@@ -40,3 +40,17 @@ It was writing one paragraph of instructions that tells the AI how to think.
 
 The code took 2 hours. That paragraph? Still not done.
 ```
+
+---
+
+### [Post #4]
+**Published:** 2026-05-18 (Morning)  
+**Type:** Standalone Algorithmic Post (Hardware Limit Hook)  
+
+```text
+My laptop has no graphics card. Zero. 
+
+Yet, I'm running and building AI agents. 
+
+Don't wait for perfect hardware. Start with what you have. Curiosity is the only tool you truly need.
+```

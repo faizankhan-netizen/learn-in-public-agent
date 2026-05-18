@@ -229,6 +229,9 @@
 | 8 | 2026-05-17 | X Premium & Smart Farming | Secured verification and established sandbox growth protocol |
 | 9 | 2026-05-17 | Premium Soft Limits | Upgraded system constraints from hard 280-char limits to soft 350-char limits |
 | 10 | 2026-05-17 | Acronym Capitalization | Ensured acronyms (AI, SaaS, LLM) remain capitalized in all lowercase drafts |
+| 11 | 2026-05-18 | Narrative Threading Split | Decoupled broad standalone posts from our linear pinned documentary updates |
+| 12 | 2026-05-18 | Premium Long-Form Posts | Shifted split threads to single high-dwell-time premium long-form posts |
+| 13 | 2026-05-18 | People-Friendly Visuals | Replaced dry technical diagrams with accessible, jargon-free visual metaphors |
 
 ---
 
@@ -254,6 +257,39 @@
 
 ---
 
+### Decision #20: Narrative Cohesion vs. Broad Reach (The Split Feed Strategy)
+**Date:** 2026-05-18  
+**Context:** When staging Post #4, we realized that an abstract tweet about hardware limits ("My laptop has no GPU...") broke the progressive linear narrative in our pinned documentary thread, even though it was a brilliant standalone post for broad timeline reach.
+
+**Debate:** Pinned threads on X are long-term assets that must document a cohesive, step-by-step linear story of a build (Loop → Prompts → Memory). If we insert arbitrary motivational or philosophical posts in that chain, it dilutes the educational value and narrative momentum.
+
+**Decision:** We split our posting strategy. High-impact standalone posts (like the hardware constraint tweet) will be posted normally on the feed for broad algorithmic reach but will *not* be chained under the Pinned Manifesto. The Pinned Manifesto replies will remain strictly reserved for linear technical updates (such as our Memory layer update).
+**Status:** ✅ Strategic split executed. Standalone tweets archived separate from narrative updates.
+
+---
+
+### Decision #21: Premium Long-Form over Splitting Threads
+**Date:** 2026-05-18  
+**Context:** Explaining the architectural "how" of our JSON memory system required deep step-by-step paragraphs, which originally forced us to draft a 4-part thread to fit the text.
+
+**Debate:** Standard threads are highly prone to user friction: readers must click "Show replies," causing a 50%+ drop-off with every single tweet in the thread. However, since the account is verified with **X Premium**, we have access to long-form posts (up to 25,000 characters). The X timeline algorithm explicitly boosts long-form content for verified users because it generates massive "dwell time."
+
+**Decision:** We codified a pivot to Premium Long-Form posts for tutorials and step-by-step architectural breakdowns. Instead of breaking them into threads, we present them as single, beautifully formatted, easy-to-read mini-essays, bypassing clicking friction completely.
+**Status:** ✅ Guideline added to `BRAND_GUIDELINES.md` (Section 6).
+
+---
+
+### Decision #22: User-Centric Visuals (The Jargon-Free Principle)
+**Date:** 2026-05-18  
+**Context:** Our initial architectural diagrams used common engineering jargon such as "JSON File", "System Prompt", and "Dynamic Constraints."
+
+**Debate:** To a developer, technical terms are clear. But to a broad social audience, jargon represents a mental block that ruins immediate comprehension. A truly helpful and premium diagram must be visually understandable in exactly two seconds by a non-technical reader.
+
+**Decision:** We established a strict visual design system: zero technical jargon on diagrams. All components are mapped to friendly physical metaphors (e.g., "JSON" → "The Diary (List of Past Topics)", "System Prompt" → "Instructions (Rules for Today)", and directional arrows are labeled with simple active verbs (e.g., "Read what we already wrote").
+**Status:** ✅ Codified in `BRAND_GUIDELINES.md` (Section 7) and new functional asset saved.
+
+---
+
 ## Lessons Learned
 
 1. **My agent is only as good as its system prompt.** The loop code barely changed. I've had to rewrite the prompt 4 times.
@@ -261,6 +297,9 @@
 3. **Authenticity beats polish.** My 8GB laptop limitation became the brand's strongest hook.
 4. **Simple words > complex jargon.** If a 14-year-old can't understand my tweet, I need to rewrite it.
 5. **Human review is non-negotiable.** My agent hallucinated on Run 1. AI is a drafting tool, not a publishing tool.
+6. **A pinned thread is a documentary, not a bulletin board.** Keep the pinned chain tightly focused on progressive, step-by-step engineering wins. 
+7. **Premium features must dictate structure.** X Premium ranking boosts dwell time; long-form posts are structurally superior to high-friction threads.
+8. **Jargon ruins visuals.** Diagrams are meant to simplify, not complicate. Use real-world physical metaphors (like "a diary" or "rules") to make complex AI loops immediately intuitive.
 
 ---
 
@@ -273,4 +312,4 @@
 
 ---
 
-*Last updated: 2026-05-17*
+*Last updated: 2026-05-18*
