@@ -337,6 +337,18 @@
 
 ---
 
+### Decision #27: The Humanity Protocol & Microservices Brain Refactor
+**Date:** 2026-05-18  
+**Context:** We realized that a monolithic brand guidelines document was becoming unscalable, and that perfectly polished, predictable AI syntax is easily detected by modern audiences, risking our authenticity. Also, the AI needed separate intelligence layers for generating original posts vs. writing replies.
+
+**Decision:** We executed a massive architectural pivot. 
+1. **Microservices Brain:** Decoupled `BRAND_GUIDELINES.md` into dedicated algorithms: `VIBE_MATRIX.md` (for outbound replies) and `FEED_MATRIX.md` (for inbound original content).
+2. **The Humanity Protocol:** Mandated "IRL Bleed" (physical reality anchoring) and "Catastrophic L's" (vulnerability) to break algorithmic perfection.
+3. **Syntactic Entropy & Defensibility:** Forced the AI to randomize casing and grammar (Desktop, Phone, Sniper, 2AM styles) and instituted a strict "Defensibility Check" so we never sacrifice factual truth for cheap engagement.
+**Status:** ✅ Architecture deployed. Local `agent.js` upgraded to dynamic loading.
+
+---
+
 ## Lessons Learned
 
 1. **My agent is only as good as its system prompt.** The loop code barely changed. I've had to rewrite the prompt 4 times.
