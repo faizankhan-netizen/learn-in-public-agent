@@ -8,7 +8,14 @@
     "briefing": "node src/agent.js --task briefing",
     "tweets": "node src/agent.js --task tweets"
   },
-  "keywords": ["ai-agent", "content-engine", "learn-in-public"],
+  "keywords": [
+    "ai-agent",
+    "content-engine",
+    "learn-in-public"
+  ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  }
 }

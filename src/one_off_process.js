@@ -8,23 +8,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DROP_DIR = path.join(__dirname, '..', 'data_drop');
 const QUEUE_FILE = path.join(__dirname, '..', 'QUEUE.md');
 
-// Ensure directories exist
-if (!fs.existsSync(DROP_DIR)) {
-  fs.mkdirSync(DROP_DIR, { recursive: true });
-}
-
-console.log(`\n👁️  Headless Watcher started. Monitoring: /data_drop`);
-console.log(`Drop a Markdown export into this folder to trigger autonomous analysis.\n`);
-
-let isProcessing = false;
-
 function detectFeedType(content) {
   const cleanContent = content.toLowerCase();
   
   // Heuristics for replies section
   const hasReplyingTo = cleanContent.includes("replying to") || cleanContent.includes("replying to @");
   const hasRepliesHeader = cleanContent.includes("## replies") || cleanContent.includes("### replies") || cleanContent.includes("\nreplies\n");
-  const hasCommentSignals = cleanContent.includes("commented") || cleanContent.includes("replied");
+  const hasCommentSignals = cleanContent.includes("commented") || cleanContent.includes("replied") || cleanContent.includes("post your reply") || cleanContent.includes("# conversation");
   
   if (hasReplyingTo || hasRepliesHeader || hasCommentSignals) {
     return 'replies';
@@ -33,31 +23,32 @@ function detectFeedType(content) {
   return 'timeline';
 }
 
-fs.watch(DROP_DIR, async (eventType, filename) => {
-  if (filename && filename.endsWith('.md') && eventType === 'rename') {
-    const filePath = path.join(DROP_DIR, filename);
+async function main() {
+  const filename = 'timeline.md';
+  const filePath = path.join(DROP_DIR, filename);
+  
+  if (!fs.existsSync(filePath)) {
+    console.error(`File ${filePath} not found.`);
+    process.exit(1);
+  }
+
+  console.log(`\n📥 Processing drop: ${filename}`);
+  console.log(`⚙️  Initializing autonomous engine...`);
+  
+  try {
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
     
-    // Check if file exists (rename triggers on both add and delete)
-    // Also use a basic lock to prevent double-firing
-    if (fs.existsSync(filePath) && !isProcessing) {
-      isProcessing = true;
-      console.log(`\n📥 Detected new drop: ${filename}`);
-      console.log(`⚙️  Initializing autonomous engine...`);
-      
-      try {
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
-        
-        // Initialize memory
-        const memory = loadMemory();
-        syncMemoryFromBriefings(memory);
-        checkStageProgression(memory);
-        
-        const feedType = detectFeedType(fileContent);
-        console.log(`🔍 Detected feed type: ${feedType === 'replies' ? 'Tweet Replies Section' : 'Home / For You Timeline Feed'}`);
-        
-        let task = '';
-        if (feedType === 'replies') {
-          task = `ANALYZED TYPE: Tweet Replies Section
+    // Initialize memory
+    const memory = loadMemory();
+    syncMemoryFromBriefings(memory);
+    checkStageProgression(memory);
+    
+    const feedType = detectFeedType(fileContent);
+    console.log(`🔍 Detected feed type: ${feedType === 'replies' ? 'Tweet Replies Section' : 'Home / For You Timeline Feed'}`);
+    
+    let task = '';
+    if (feedType === 'replies') {
+      task = `ANALYZED TYPE: Tweet Replies Section
 The system has automatically detected that this is a comment/replies section under a specific post.
 
 Analyze the room's temperature and consensus using the VIBE_MATRIX.md rules. Apply the Critique Protocol (External Anti-Sycophancy) to formulate a contrarian take or a supportive Builder Nod, depending on the vibe.
@@ -76,8 +67,8 @@ Here is the raw replies data:
 ---
 ${fileContent.substring(0, 5000)}
 ---`;
-        } else {
-          task = `ANALYZED TYPE: Home / For You Timeline Feed
+    } else {
+      task = `ANALYZED TYPE: Home / For You Timeline Feed
 The system has automatically detected that this is a timeline feed drop.
 
 Analyze the trending developer debates, tools, and visual layouts in this feed using the FEED_MATRIX.md rules.
@@ -96,28 +87,26 @@ Here is the raw feed data:
 ---
 ${fileContent.substring(0, 5000)}
 ---`;
-        }
-
-        console.log(`🧠 Processing data through the intelligence matrices...`);
-        const output = await runAgent(task, memory);
-        
-        // Save the raw output to output/ for historical records
-        saveOutput(output);
-        
-        // Append finalized drafts to QUEUE.md
-        const queueHeader = `\n\n## 🤖 Autonomous Drop (${new Date().toISOString()})\n`;
-        fs.appendFileSync(QUEUE_FILE, queueHeader + output, 'utf-8');
-        console.log(`✅ Success! Drafts appended to QUEUE.md`);
-        
-        // Clean up the drop file
-        fs.unlinkSync(filePath);
-        console.log(`🧹 Cleaned up ${filename}. Watching for next drop...`);
-        
-      } catch (error) {
-        console.error(`❌ Error processing ${filename}:`, error.message);
-      } finally {
-        isProcessing = false;
-      }
     }
+
+    console.log(`🧠 Processing data through the intelligence matrices...`);
+    const output = await runAgent(task, memory);
+    
+    // Save the raw output to output/ for historical records
+    saveOutput(output);
+    
+    // Append finalized drafts to QUEUE.md
+    const queueHeader = `\n\n## 🤖 Autonomous Drop (${new Date().toISOString()})\n`;
+    fs.appendFileSync(QUEUE_FILE, queueHeader + output, 'utf-8');
+    console.log(`✅ Success! Drafts appended to QUEUE.md`);
+    
+    // Clean up the drop file
+    fs.unlinkSync(filePath);
+    console.log(`🧹 Cleaned up ${filename}.`);
+    
+  } catch (error) {
+    console.error(`❌ Error processing ${filename}:`, error.message);
   }
-});
+}
+
+main();

@@ -74,12 +74,17 @@ Then provide your final output following this EXACT structure (tweets FIRST, bri
 ---
 
 ## Tweet Drafts
+(Provide a mix of lengths. DO NOT use titles, markdown headers like ###, or formal bullet points. Just use raw text with double line breaks for whitespace.)
 
-1. [tweet text] (X chars)
-2. [tweet text] (X chars)
-3. [tweet text] (X chars)
-4. [tweet text] (X chars)
-5. [tweet text] (X chars)
+[Premium Long-Form mini-essay]
+
+---
+
+[Medium-length thought]
+
+---
+
+[Short Phone Post / Sniper take]
 
 ## Thread Idea
 
@@ -125,15 +130,13 @@ ${vibeMatrix}
 ### The Feed Matrix (Original Content Algorithm)
 ${feedMatrix}
 
-### Character Limit (Premium Optimized)
-- SOFT LIMIT: Aim to keep every single tweet under 350 characters. While Premium allows longer posts, shorter posts are consumed faster, increasing dwell time and completions.
-- Do NOT print character counts in parentheses (like '(187 chars)') at the end of drafts. Keep the drafts completely clean and copy-paste ready.
-
-### Format Rules (X Algorithm Optimized)
-- Use proper capitalization and punctuation (write like Naval, not like a teenager texting)
-- Use line breaks between thoughts. White space increases reading time, which the X algorithm rewards.
-- NO EXTERNAL LINKS. The X algorithm penalizes outbound links. If a topic has a link, write "[link in reply]" and do not include the URL in the draft.
-- NO HASHTAGS. Zero. They look corporate on a new personal account.
+### Format Rules & X Premium Mix (CRITICAL)
+- DIVERSE LENGTHS: Since we have X Premium, provide a mix: one Long-Form mini-essay (500-1000 chars), one Medium Thought (250-350 chars), and one Sniper Post (100-200 chars).
+- NO EDITORIAL FORMATTING: Never use titles, markdown headers (e.g. ### Title), or formal bullet lists. Real X posts are just raw, punchy sentences separated by double line breaks.
+- Use proper capitalization and punctuation for most posts, but use lowercase-first for 'Phone/Sniper' takes (always capitalize acronyms like AI, API, LLM).
+- Use double line breaks between thoughts. White space increases reading time.
+- NO EXTERNAL LINKS.
+- NO HASHTAGS. Zero. They look corporate.
 - Use "I" statements — this is YOUR journey
 - Include a question OR a reaction emoji, not both. (Questions are preferred to drive reply multipliers).
 - No corporate words: "leverage", "utilize", "innovative", "groundbreaking", "exciting"
@@ -331,4 +334,10 @@ Focus on: AI agents, open source LLMs, developer tools, and tech education.`;
   }
 }
 
-main();
+// Only run main if this file is executed directly
+import { realpathSync } from 'fs';
+const nodePath = fileURLToPath(import.meta.url);
+if (process.argv[1] && (process.argv[1] === nodePath || realpathSync(process.argv[1]) === nodePath)) {
+  main();
+}
+

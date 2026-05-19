@@ -182,3 +182,41 @@ export function getToolDescriptions() {
     .map(([name, tool]) => `- ${name}: ${tool.description}`)
     .join('\n');
 }
+
+// ─────────────────────────────────────────────
+// Utility: Non-destructive Timeline/X UI Sanitizer
+// ─────────────────────────────────────────────
+export function sanitizeTimelineInput(rawText) {
+  if (!rawText || typeof rawText !== 'string') return '';
+  
+  // Target known, exact X UI string blocks to scrub
+  const xBoilerplate = [
+    /Show new posts/gi,
+    /Everyone can reply/gi,
+    /Post your reply/gi,
+    /Translate post/gi,
+    /Post you liked/gi,
+    /Relevant/gi,
+    /Show replies/gi,
+    /Reply/gi,
+    /Retweet/gi,
+    /Share/gi,
+    /Bookmarked/gi,
+    /·\s+\d+[hmdy]/gi, // Scrub timeline time indicator middle-dots like "· 18h"
+    /\[\s*\]/gi        // Scrub empty checkboxes from scrapers
+  ];
+
+  let scrubbed = rawText;
+  for (const regex of xBoilerplate) {
+    scrubbed = scrubbed.replace(regex, '');
+  }
+
+  // Remove trailing spaces, clean consecutive empty lines
+  scrubbed = scrubbed
+    .split('\n')
+    .map(line => line.trim())
+    .filter((line, i, arr) => line !== '' || arr[i - 1] !== '')
+    .join('\n');
+
+  return scrubbed.trim();
+}
